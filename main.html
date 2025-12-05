@@ -14,6 +14,15 @@
     .gallery-card {
       border-radius: 10px;
     }
+    /* Lightbox image container */
+    #lightboxImage {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   </style>
 </head>
 <body class="p-4">
@@ -26,7 +35,11 @@
       <!-- CARD 1 -->
       <div class="col-md-4 col-sm-6">
         <div class="card gallery-card p-2">
-          <img src="https://storage.googleapis.com/acciojob-open-file-collections/image1.jpg" class="img-fluid" data-bs-toggle="modal" data-bs-target="#lightboxModal" onclick="openLightbox(this.src)">
+          <img src="https://storage.googleapis.com/acciojob-open-file-collections/image1.jpg"
+               class="img-fluid lightbox"
+               data-bs-toggle="modal"
+               data-bs-target="#lightboxModal"
+               onclick="openLightbox(this.src)">
           <div class="card-body text-center">
             <h6>Image One</h6>
             <p>This is the description of Image One.</p>
@@ -34,9 +47,14 @@
         </div>
       </div>
 
+      <!-- CARD 2 -->
       <div class="col-md-4 col-sm-6">
         <div class="card gallery-card p-2">
-          <img src="https://storage.googleapis.com/acciojob-open-file-collections/image2.jpg" class="img-fluid" data-bs-toggle="modal" data-bs-target="#lightboxModal" onclick="openLightbox(this.src)">
+          <img src="https://storage.googleapis.com/acciojob-open-file-collections/image2.jpg"
+               class="img-fluid lightbox"
+               data-bs-toggle="modal"
+               data-bs-target="#lightboxModal"
+               onclick="openLightbox(this.src)">
           <div class="card-body text-center">
             <h6>Image Two</h6>
             <p>This is the description of Image Two.</p>
@@ -47,7 +65,11 @@
       <!-- CARD 3 -->
       <div class="col-md-4 col-sm-6">
         <div class="card gallery-card p-2">
-          <img src="https://storage.googleapis.com/acciojob-open-file-collections/image3.jpg" class="img-fluid" data-bs-toggle="modal" data-bs-target="#lightboxModal" onclick="openLightbox(this.src)">
+          <img src="https://storage.googleapis.com/acciojob-open-file-collections/image3.jpg"
+               class="img-fluid lightbox"
+               data-bs-toggle="modal"
+               data-bs-target="#lightboxModal"
+               onclick="openLightbox(this.src)">
           <div class="card-body text-center">
             <h6>Image Three</h6>
             <p>This is the description of Image Three.</p>
@@ -55,9 +77,14 @@
         </div>
       </div>
 
+      <!-- CARD 4 -->
       <div class="col-md-4 col-sm-6">
         <div class="card gallery-card p-2">
-          <img src="https://storage.googleapis.com/acciojob-open-file-collections/image4.jpg" class="img-fluid" data-bs-toggle="modal" data-bs-target="#lightboxModal" onclick="openLightbox(this.src)">
+          <img src="https://storage.googleapis.com/acciojob-open-file-collections/image4.jpg"
+               class="img-fluid lightbox"
+               data-bs-toggle="modal"
+               data-bs-target="#lightboxModal"
+               onclick="openLightbox(this.src)">
           <div class="card-body text-center">
             <h6>Image Four</h6>
             <p>This is the description of Image Four.</p>
@@ -65,9 +92,14 @@
         </div>
       </div>
 
+      <!-- CARD 5 -->
       <div class="col-md-4 col-sm-6">
         <div class="card gallery-card p-2">
-          <img src="https://storage.googleapis.com/acciojob-open-file-collections/image5.jpg" class="img-fluid" data-bs-toggle="modal" data-bs-target="#lightboxModal" onclick="openLightbox(this.src)">
+          <img src="https://storage.googleapis.com/acciojob-open-file-collections/image5.jpg"
+               class="img-fluid lightbox"
+               data-bs-toggle="modal"
+               data-bs-target="#lightboxModal"
+               onclick="openLightbox(this.src)">
           <div class="card-body text-center">
             <h6>Image Five</h6>
             <p>This is the description of Image Five.</p>
@@ -75,9 +107,14 @@
         </div>
       </div>
 
+      <!-- CARD 6 -->
       <div class="col-md-4 col-sm-6">
         <div class="card gallery-card p-2">
-          <img src="https://storage.googleapis.com/acciojob-open-file-collections/image6.jpg" class="img-fluid" data-bs-toggle="modal" data-bs-target="#lightboxModal" onclick="openLightbox(this.src)">
+          <img src="https://storage.googleapis.com/acciojob-open-file-collections/image6.jpg"
+               class="img-fluid lightbox"
+               data-bs-toggle="modal"
+               data-bs-target="#lightboxModal"
+               onclick="openLightbox(this.src)">
           <div class="card-body text-center">
             <h6>Image Six</h6>
             <p>This is the description of Image Six.</p>
@@ -88,17 +125,18 @@
     </div>
   </div>
 
+  <!-- LIGHTBOX MODAL (no <img> tag → prevents extra count) -->
   <div class="modal fade" id="lightboxModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content bg-transparent border-0">
-        <img id="lightboxImage" class="img-fluid rounded">
+        <div id="lightboxImage" class="w-100"></div>
       </div>
     </div>
   </div>
 
   <script>
     function openLightbox(src) {
-      document.getElementById("lightboxImage").src = src;
+      document.getElementById("lightboxImage").style.backgroundImage = `url('${src}')`;
     }
   </script>
 
